@@ -1,0 +1,37 @@
+{
+  "name": "contatooh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.6",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^0.8.8",
+    "express": "4.8",
+    "express-load": "1.1",
+    "express-session": "^1.17.2",
+    "helmet": "^4.6.0",
+    "method-override": "2.1",
+    "mongo-sanitize": "^1.1.0",
+    "mongoose": "^5.13.2",
+    "mongoose-findorcreate": "^3.0.0",
+    "passport": "^0.4.1",
+    "passport-github": "^1.1.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-uglify": "^5.0.1",
+    "grunt-ng-annotate": "^4.0.0",
+    "grunt-usemin": "^3.1.1",
+    "karma": "^6.3.4"
+  }
+}
