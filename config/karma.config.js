@@ -63,7 +63,8 @@ module.exports = function (config) {
         browsers: ['PhantomJS'],
 
         plugins: [
-            'karma-jasmine'
+            'karma-jasmine',
+            'karma-phantonjs-launcher'
         ],
 
         // Continuous Integration mode
