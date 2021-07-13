@@ -9,6 +9,8 @@ module.exports = function (app) {
     contatoController.salvaContato = salvaContato;
 
 
+
+
     /* actions */
     function listaContatos(req, res) {
         Contato.find()
