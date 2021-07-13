@@ -2,15 +2,14 @@ language: node_js
 node_js:
   - 0.10
 notifications:
-  email:
     - danilo.romano@azi.com.br
 before_install:
   - npm install -g bower
   - npm install -g grunt-cli
   - npm install -g karma-cli
   - npm install -g protractor
-  - webdriver-manager update
   - bower install
+  - webdriver-manager update
 before_script:
   - grunt
   - cd dist
