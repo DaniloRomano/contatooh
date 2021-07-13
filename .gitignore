@@ -6,3 +6,4 @@ public/vendor/
 dist/
 scripts/
 .idea/
+mondod-service-start.sh
