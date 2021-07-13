@@ -2,7 +2,8 @@ language: node_js
 node_js:
   - 0.10
 notifications:
-  - danilo.romano@azi.com.br
+  email:
+    - danilo.romano@azi.com.br
 before_install:
   - npm install -g bower
   - npm install -g grunt-cli
