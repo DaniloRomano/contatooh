@@ -3,7 +3,7 @@ notifications:
   email:
     - daniloapromano@live.com
 node_js:
-  - v16.3.0
+  - 0.10
 services:
   - mongodb
 env:
