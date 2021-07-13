@@ -2,7 +2,9 @@ var http = require('http');
 
 var app = require('./config/express')();
 require('./config/passport')();
-require('./config/database.js')('mongodb://localhost/contatooh');
+var config =require('./config/config')();
+require('./config/database.js')(config.db);
+
 
 http.createServer(app)
     .listen(

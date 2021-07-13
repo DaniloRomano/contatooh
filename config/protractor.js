@@ -1,3 +1,5 @@
+var config=require('./config.js')();
+
 exports.config = {
     specs: ['../test/e2e/**/*.js'],
     onPrepare: function () {
@@ -5,9 +7,9 @@ exports.config = {
             .then(function(){
                 browser.driver.findElement(by.id('entrar')).click();
                 browser.driver.findElement(by.id('login_field'))
-                    .sendKeys('robinho.romano@gmail.com');
+                    .sendKeys(config.seleniumUser);
                 browser.driver.findElement(by.id('password'))
-                    .sendKeys('teste08051990');
+                    .sendKeys(config.seleniumUserPassword);
                 browser.driver.findElement(by.name('commit')).click();
             });
     }
