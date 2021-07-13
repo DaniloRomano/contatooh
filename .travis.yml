@@ -25,6 +25,6 @@ before_script:
   - grunt
   - cd dist
 script:
-  - karma start config/karma.config.js --single-run --browsers PhantomJS
+  - karma start config/karma.config.js
   - node server &
   - protractor config/protractor.js
