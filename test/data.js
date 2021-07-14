@@ -1,49 +1,22 @@
-var mongoose = require("mongoose");
-
-var schema = mongoose.Schema({
-    nome: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true,
-        index: {
-            unique: true
-        }
-    },
-    emergencia: {
-        type: mongoose.Schema.ObjectId,
-        ref: 'Contato'
-    }
-});
-
-var ContatoModel = mongoose.model('Contato', schema);
-
-
+var MongoClient = require('mongodb').MongoClient;
 var contatos = [
-    {nome: 'xyz1', email: 'xyz1@email.com'},
-    {nome: 'xyz2', email: 'xyz2@email.com'},
-    {nome: 'xyz3', email: 'xyz3@email.com'},
-    {nome: 'xyz4', email: 'xyz4@email.com'}
+    {nome: "xyz1", email: 'xyz1@email.com.br'},
+    {nome: "xyz2", email: 'xyz2@email.com.br'},
+    {nome: "xyz3", email: 'xyz3@email.com.br'},
 ];
-const conn = mongoose.createConnection('mongodb://localhost:27017/contatooh_test');
-// Deletes the entire 'mydb' database
-conn.dropDatabase();
 
-contatos.forEach((c) => {
-    ContatoModel.create(c)
-        .then(function () {
-            console.log("Usuario inserido");
-        }, function (err) {
-            console.log(err);
+MongoClient.connect('mongodb://127.0.0.1:27017/',
+    function (erro, db) {
+        if (erro) throw err;
+        var dbo=db.db("contatooh_test");
+        dbo.dropDatabase(function (err) {
+            if (err) return console.log(err);
+            dbo.collection('contatos').insertMany(contatos,
+                function (err, inserted) {
+                    if (err) return console.log(err);
+                    console.log('Banco populado com sucesso')
+                    process.exit(0);
+                });
         });
-});
-
-conn.close(true).then(
-    function(){
-        console.log('banco fechado');
     }
 );
-
-process.exit(0);
