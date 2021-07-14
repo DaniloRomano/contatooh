@@ -37,6 +37,7 @@
     "har-validator": "^5.1.5",
     "karma": "^6.3.4",
     "karma-jasmine": "^4.0.1",
+    "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.4",
     "phantomjs-prebuilt": "^2.1.16"
   }

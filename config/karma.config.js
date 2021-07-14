@@ -22,7 +22,9 @@ module.exports = function (config) {
             '../public/js/main.js',
             '../public/js/controllers/**/*.js',
             '../public/js/services/**/*.js',
-            '../test/spec/**/*Spec.js'
+            '../public/js/directives/**/*.js',
+            '../test/spec/**/*Spec.js',
+            '../public/js/directives/meus-componentes/*.html'
         ],
 
 
@@ -32,7 +34,9 @@ module.exports = function (config) {
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
-        preprocessors: {},
+        preprocessors: {
+            '../public/js/directives/**/*.html': 'ng-html2js'
+        },
 
 
         // test results reporter to use
@@ -63,13 +67,20 @@ module.exports = function (config) {
         browsers: ['PhantomJS'],
 
         plugins: [
-            require('karma-jasmine'),
-            require('karma-phantomjs-launcher')
+            require('karma-ng-html2js-preprocessor'),
+            require('karma-chrome-launcher'),
+            require('karma-phantomjs-launcher'),
+            require('karma-jasmine')
         ],
+
+        ngHtml2JsPreprocessor:{
+            moduleName: 'templates',
+            stripPrefix: '.*/public/'
+        },
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: true,
+        singleRun: false,
 
         // Concurrency level
         // how many browser instances should be started simultaneously

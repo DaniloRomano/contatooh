@@ -1,7 +1,8 @@
 angular.module('contatooh',
     [
         'ngRoute',
-        'ngResource'
+        'ngResource',
+        'meusComponentes'
     ])
     .config(function ($locationProvider,$routeProvider, $httpProvider) {
         $locationProvider.hashPrefix(''); //Volta a ser # na url e não !#

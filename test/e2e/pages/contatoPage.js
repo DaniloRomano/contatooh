@@ -27,7 +27,7 @@ var contatoPage = function () {
     }
 
     function selecionarPrimeiraEmerenciaDaLista() {
-        element(by.css('option:nth-child(2)')).click();
+        element(by.css('option:first-child')).click();
     }
 }
 

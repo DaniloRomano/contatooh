@@ -20,7 +20,8 @@ var contatosPage = function () {
 
     function removerPrimeiroItemDaLista() {
         element(by.repeater('contato in contatos').row(0))
-            .element(by.css(".btn")).click();
+            .element(by.css('.btn'))
+            .click();
     }
 }
 

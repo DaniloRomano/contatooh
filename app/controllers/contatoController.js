@@ -8,9 +8,6 @@ module.exports = function (app) {
     contatoController.removeContato = removeContato;
     contatoController.salvaContato = salvaContato;
 
-
-
-
     /* actions */
     function listaContatos(req, res) {
         Contato.find()
