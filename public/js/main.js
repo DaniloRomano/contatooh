@@ -24,7 +24,7 @@ angular.module('contatooh',
             templateUrl: 'partials/contato.html',
             controller: 'ContatoController'
         });
-        $routeProvider.otherwise({
-            redirectTo: '/contatos'
-        });
+        // $routeProvider.otherwise({
+        //     redirectTo: '/contatos'
+        // });
     });
