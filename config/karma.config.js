@@ -51,7 +51,7 @@ module.exports = function (config) {
 
         // level of logging
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-        logLevel: config.LOG_INFO,
+        logLevel: config.LOG_DEBUG,
 
 
         // enable / disable watching file and executing tests whenever any file changes
@@ -60,12 +60,11 @@ module.exports = function (config) {
 
         // start these browsers
         // available browser launchers: https://www.npmjs.com/search?q=keywords:karma-launcher
-        browsers: ['ChromeHeadless'],
+        browsers: ['PhantomJS'],
 
         plugins: [
-            'karma-jasmine',
-            // 'karma-phantomjs-launcher'
-            'karma-chrome-launcher'
+            require('karma-jasmine'),
+            require('karma-phantomjs-launcher')
         ],
 
         // Continuous Integration mode
