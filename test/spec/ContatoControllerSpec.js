@@ -13,6 +13,7 @@ describe('ContatoController', function () {
             '$scope': $scope,
             '$routeParams': routeParams
         });
+        console.log($controller);
     }
 
     // beforeEach(function () {
@@ -29,8 +30,10 @@ describe('ContatoController', function () {
         $injector = _$injector_;
         $scope = $injector.get("$rootScope").$new();
         $httpBackend = $injector.get("$httpBackend");
-        $httpBackend.expectGET('/contatos/1').respond({_id: 1});
-        $httpBackend.expectGET('/contatos').respond([{}]);
+        // $httpBackend.expectGET('/contatos/1').respond({_id: 1});
+        // $httpBackend.expectGET('/contatos').respond([{}]);
+        $httpBackend.when('GET', '/contatos/1').respond({_id: 1});
+        $httpBackend.when('GET', '/contatos').respond([{}]);
         $controller = $injector.get("$controller");
     }));
 
@@ -56,7 +59,7 @@ describe('ContatoController', function () {
         //     '$scope': $scope
         // });
         function () {
-             initController({contatoId: 1});
+            initController({contatoId: 1});
             // $httpBackend.expectGET('/contatos/1').respond({_id: 1});
             $httpBackend.flush();
             expect($scope.contato._id).toBeDefined();
