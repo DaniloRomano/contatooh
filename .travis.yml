@@ -14,7 +14,7 @@ services:
 
 addons:
   chrome: stable
-  sauce_connect: true
+ # sauce_connect: true
 before_install:
   - npm install -g bower
   - npm install -g grunt-cli
