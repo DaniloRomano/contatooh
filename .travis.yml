@@ -2,13 +2,18 @@ language: node_js
 notifications:
   email: daniloapromano@live.com
 node_js:
-  - 16.3.0
+  - 'node'
+sudo: required
+dist: xenial
 services:
   - mongodb
-env:
-  global:
-    - NODE_ENV: test
-#addons:
+  - xvfb
+#env:
+  #global:
+   # - NODE_ENV: test
+
+addons:
+  chrome: stable
   #sauce_connect: true
 before_install:
   - npm install -g bower
@@ -18,9 +23,11 @@ before_install:
   - webdriver-manager update
   - bower install
 before_script:
+  - export NODE_ENV=test
+  - export DISPLAY=:99.0
   - node test/data.js
   - grunt
   - cd dist
 script:
-  - karma start config/karma.config.js --single-run --browsers PhantomJS
+  - karma start config/karma.config.js --single-run
   #- node server #& protractor config/protractor.js

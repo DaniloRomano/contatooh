@@ -13,7 +13,6 @@ describe('ContatoController', function () {
             '$scope': $scope,
             '$routeParams': routeParams
         });
-        console.log($controller);
     }
 
     // beforeEach(function () {
