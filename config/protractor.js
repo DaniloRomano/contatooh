@@ -13,8 +13,6 @@ exports.config = {
     onPrepare: function () {
         browser.driver.get('http://localhost:3000')
             .then(function () {
-                console.log(config);
-                console.log(process.env);
                 browser.driver.findElement(by.id('entrar')).click();
                 browser.driver.findElement(by.id('login_field'))
                     .sendKeys(config.seleniumUser);

@@ -1,6 +1,6 @@
 var ContatosPage = new require('./pages/contatosPage');
 
-describe("Página principal", function () {
+describe("Página principal ## ", function () {
     var pagina = new ContatosPage();
     beforeEach(function () {
         pagina.visitar();
@@ -8,7 +8,7 @@ describe("Página principal", function () {
 
     it('Deve estar logado', function () {
         pagina.obterUsuarioLogado()
-            .then(function (texto) {
+            .then(function (texto){
                 expect(texto.trim().length).toBeGreaterThan(0);
             });
     });

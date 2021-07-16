@@ -1,6 +1,6 @@
 var ContatoPage = new require('./pages/contatoPage');
 
-describe('Cadastro de contatos', function () {
+describe('Cadastro de contatos ## ', function () {
     var pagina = new ContatoPage();
 
     beforeEach(function () {
