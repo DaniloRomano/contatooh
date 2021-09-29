@@ -15,16 +15,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+ build:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: UnitTesting
-        run: karma start conf/karma.config.js
+    - uses: actions/checkout@v2 #Checkout Repo
+    - uses: actions/setup-node@v1 #Setup Node
+      with:
+        node-version: '12'
+    - name: Run Karma Tests
+      run: |
+        npm install
+        karma start config/karma.config.js 
