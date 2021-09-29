@@ -28,7 +28,8 @@ jobs:
 
       - name: Run Karma Tests
         run: |
-          npm install -g karma
+          npm install -g bower
+          npm install -g karma          
           npm install
           bower install
           karma start config/karma.config.js 
