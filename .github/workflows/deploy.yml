@@ -26,13 +26,16 @@ jobs:
           node-version: '14'
           registry-url: https://registry.npmjs.org/
 
-      - name: Run Karma Tests
+      - name: Setup npm
         run: |
           npm install -g bower
           npm install -g karma          
+          npm install -g grunt
           npm install
           bower install
-          karma start config/karma.config.js 
+          grunt
+      - name: Run Karma Tests
+        run: karma start config/karma.config.js 
         
       - name: "Deploy to Vercel"
         run: |
