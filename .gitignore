@@ -7,3 +7,4 @@ dist/
 scripts/
 .idea/
 scripts/mondod-service-start.sh
+.vercel
