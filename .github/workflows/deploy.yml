@@ -24,6 +24,9 @@ jobs:
           node-version: '14'
           registry-url: https://registry.npmjs.org/
 
+      - name: Run Karma Tests
+        run: karma start config/karma.config.js 
+        
       - name: "Deploy to Vercel"
         run: |
           prodRun=""
