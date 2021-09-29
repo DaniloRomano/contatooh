@@ -30,6 +30,7 @@ jobs:
         run: |
           npm install -g karma
           npm install
+          bower install
           karma start config/karma.config.js 
         
       - name: "Deploy to Vercel"
