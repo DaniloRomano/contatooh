@@ -6,7 +6,10 @@ on:
       - published
   push:
     branches:
-      - dev
+      - master
+  pull_request:
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
