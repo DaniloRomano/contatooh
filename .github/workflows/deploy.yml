@@ -27,6 +27,7 @@ jobs:
       - name: Run Karma Tests
         run: |
           npm install -g karma
+          npm install
           karma start config/karma.config.js 
         
       - name: "Deploy to Vercel"
