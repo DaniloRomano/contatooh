@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  vercel: 
+  setup: 
     runs-on: ubuntu-latest
     name: "Deploy front-end"
     
@@ -34,9 +34,14 @@ jobs:
           npm install
           bower install
           grunt
+  unit-testing:
+    runs-on: ubuntu-latest
+    steps:
       - name: Run Karma Tests
         run: karma start config/karma.config.js 
-        
+  deploy-vercel:
+    runs-on: ubuntu-latest
+    steps:
       - name: "Deploy to Vercel"
         run: |
           prodRun=""
